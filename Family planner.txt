@@ -1,0 +1,35 @@
+Family planner
+
+<<TechStack>>
+	Frontend: TS/React w/ Vite
+	Backend: TS/Node.js
+	Database: Supabase, GraphQL-Apollo Server w/ prisma for data querying 
+	Auth: BCrypt?
+	Testing: Jest?
+	Global State?: Redux?
+
+<<Data model>>
+	user: userId, username, familyId (family[]), email, password, role
+	item: itemId, name, store, priority(enum: low, medium, high) image, price, quantity(stock[]) 
+	groceryList: listId, familyId(family[]), itemId(item[]), quantity, status(enum: pending, bought)
+	stock: stockId, itemId(item[]), familyId(family[]), quantity, lastUpdated(timestamp)
+	family: familyId, familyName, users(one to many relationships with users)
+
+<<Grocery list app (mvp's)>>
+	- User to select family (get families)
+	- User username & password to login.  (Get user/create user)
+	- User sees the grocery list. (get groceryList)
+	- User to add items to grocery list, (post groceryList)
+	- User can select from previously given images by searching from the name (from filter, get images)
+	- User can add an image (post image)
+	- User can edit quantity needed
+	- Grocery list updates in real time
+
+Wireframes: draw.io
+
+Index/grocery
+
+Stretch goal:
+Schedule app (mvp's)
+Index/schedule
+CI/CD pipeline
